@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t olegdimitrov1/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t olegdimitrov1/react-test -f ./client/Dockerfile.dev ./client/
 
 
 script:
@@ -15,7 +15,7 @@ after_success:
   - docker build -t olegdimitrov1/multi-server ./server
   - docker build -t olegdimitrov1/multi-worker ./worker
 
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin
 
   - docker push olegdimitrov1/multi-client
   - docker push olegdimitrov1/multi-nginx

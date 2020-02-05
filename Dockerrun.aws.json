@@ -1,0 +1,9 @@
+{
+  "AWSEBDockerrunVesrion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "olegdimitrov1/multi-client"
+   } 
+ ]
+}
